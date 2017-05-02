@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TimeService } from '../time.service';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-time',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./time.component.css']
 })
 export class TimeComponent implements OnInit {
+    time: any = '';
 
-  constructor() { }
+    constructor(private timeService: TimeService) {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+        let currentTime = this.timeService.getTime();
 
+        currentTime.expand(() => Observable.timer(1000).concatMap(() => currentTime))
+            .subscribe(time => {
+                this.time = time;
+            });
+
+
+    }
 }

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { TimeComponent } from './time/time.component';
+import { TimeService } from './time.service';
 
 const ROUTES = [
     {
@@ -27,7 +28,7 @@ const ROUTES = [
         HttpModule,
         RouterModule.forRoot(ROUTES),
     ],
-    providers: [],
+    providers: [TimeService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
