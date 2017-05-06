@@ -9,11 +9,11 @@ import { TimeComponent } from './time/time.component';
 import { TimeService } from './time.service';
 
 const ROUTES = [
+    // {
+    //     path: '', redirectTo: '/dashboard' , pathMatch: 'full',
+    // },
     {
-        path: '', redirectTo: '/time' , pathMatch: 'full',
-    },
-    {
-        path: 'time', name:'Time', component: TimeComponent
+        path: 'dashboard', name:'Dashboard', component: AppComponent
     }
 ];
 
