@@ -1,0 +1,17 @@
+<p>
+  {{conditionText}}
+</p>
+<p>
+  {{temp}}
+</p>
+
+<img src="https://developer.accuweather.com/sites/default/files/{{icon}}-s.png" alt="weather-icon"/>
+<ul>
+  <li *ngFor="let forecast of fiveDayForecast">
+    <p>{{forecast.DateTime}}</p>
+    <img src="https://developer.accuweather.com/sites/default/files/{{forecast.WeatherIcon}}-s.png">
+    <p>{{forecast.IconPhrase}}</p>
+  </li>
+</ul>
+
+

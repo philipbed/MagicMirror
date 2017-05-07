@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TimeComponent } from './time/time.component';
 import { TimeService } from './time.service';
+import { WeatherComponent } from './weather/weather.component';
+import {WeatherService} from "./weather.service";
 
 const ROUTES = [
     // {
@@ -20,7 +22,8 @@ const ROUTES = [
 @NgModule({
     declarations: [
         AppComponent,
-        TimeComponent
+        TimeComponent,
+        WeatherComponent
     ],
     imports: [
         BrowserModule,
@@ -28,7 +31,7 @@ const ROUTES = [
         HttpModule,
         RouterModule.forRoot(ROUTES),
     ],
-    providers: [TimeService],
+    providers: [TimeService,WeatherService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
