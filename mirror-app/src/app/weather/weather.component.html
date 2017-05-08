@@ -1,17 +1,40 @@
-<p>
-  {{conditionText}}
-</p>
-<p>
-  {{temp}}
-</p>
+<div class="now container row">
+  <p class="center col-md-8 col-md-offset-2">Currently</p>
+  <div class="row">
+    <p class="condition center col-md-8 col-md-offset-2">
+      {{conditionText}}
+    </p>
+    <!--<img src="https://developer.accuweather.com/sites/default/files/{{icon}}-s.png" alt="weather-icon"/>-->
+    <p class="center col-md-8 col-md-offset-2">
+      {{temp}}
+    </p>
+    <br/>
+    <br/>
+  </div>
+</div>
+<div class="container row">
+  <p class="center col-md-12">Hourly Forecast</p>
+  <!--<table class="table table-bordered col-md-9 ">-->
+    <!--<tbody>-->
+      <!--<tr>-->
+        <!--<td *ngFor="let forecast of fiveDayForecast">-->
+          <!--<p class="condition">{{forecast.IconPhrase}}</p>-->
+          <!--&lt;!&ndash;<img src="https://developer.accuweather.com/sites/default/files/{{forecast.WeatherIcon}}-s.png" alt="weather-icon">&ndash;&gt;-->
+          <!--<p>{{forecast.Temperature.Value}}{{forecast.Temperature.Unit}}</p>-->
+          <!--<p>{{forecast.DateTime}}</p>-->
+        <!--</td>-->
+      <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+  <ul id="forecast-list" class="row">
+    <li *ngFor="let forecast of fiveDayForecast" class="col-md-1 col-md-offset-1">
+      <p class="condition center">{{forecast.IconPhrase}}</p>
+      <!--<img src="https://developer.accuweather.com/sites/default/files/{{forecast.WeatherIcon}}-s.png" alt="weather-icon">-->
+      <p class="center">{{forecast.Temperature.Value}}{{forecast.Temperature.Unit}}</p>
+      <p class="center">{{forecast.DateTime}}</p>
+    </li>
+  </ul>
+</div>
 
-<img src="https://developer.accuweather.com/sites/default/files/{{icon}}-s.png" alt="weather-icon"/>
-<ul>
-  <li *ngFor="let forecast of fiveDayForecast">
-    <p>{{forecast.DateTime}}</p>
-    <img src="https://developer.accuweather.com/sites/default/files/{{forecast.WeatherIcon}}-s.png">
-    <p>{{forecast.IconPhrase}}</p>
-  </li>
-</ul>
 
 

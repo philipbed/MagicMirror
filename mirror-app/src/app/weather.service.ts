@@ -62,7 +62,7 @@ export class WeatherService {
     // minutes under 10 should be prepended with a zero (i.e '02')
     minutes = parseInt(minutes) < 10 ? '0'+minutes : minutes;
 
-    let strTime = hours + ':' + minutes + ':' + ampm;
+    let strTime = hours + ':' + minutes + '' + ampm;
 
     return strTime;
 

@@ -1,0 +1,12 @@
+#date{
+  float: left;
+}
+
+.now {
+  float: right;
+  font-size: 3em;
+}
+
+#forecast-list{
+  list-style: none;
+}

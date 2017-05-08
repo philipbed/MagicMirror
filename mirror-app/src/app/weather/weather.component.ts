@@ -26,7 +26,7 @@ export class WeatherComponent implements OnInit {
       });
 
       this.weatherService.getTwelveDay().subscribe((response) => {
-          let fiveDayForecast = response.slice(0,5);
+          let fiveDayForecast = response.slice(0,4);
           this.fiveDayForecast = this.weatherService.processFiveDay(fiveDayForecast);
       });
   }
