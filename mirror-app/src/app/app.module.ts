@@ -11,9 +11,7 @@ import { WeatherComponent } from './weather/weather.component';
 import {WeatherService} from "./weather.service";
 
 const ROUTES = [
-    // {
-    //     path: '', redirectTo: '/dashboard' , pathMatch: 'full',
-    // },
+    // component routes
     {
         path: 'dashboard', name:'Dashboard', component: AppComponent
     }

@@ -2,10 +2,16 @@ import { Injectable } from '@angular/core';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/map';
 
+/**
+ * Class that holds methods to make asynchronous http requests
+ * and format json objects
+ */
 @Injectable()
 export class TimeService {
+  // format - variable_name:type
   weekdays :any;
   months: any;
+
   constructor(private http: Http) {
 
     this.weekdays = {
@@ -35,10 +41,18 @@ export class TimeService {
 
   }
 
+  /**
+   * Asynchronous HTTP request to our REST API for the time
+   * @returns {Observable<R>} - contains the response json object
+   */
   getTime(){
     return this.http.get("/app/time").map(res => res.json());
   }
 
+  /**
+   * get the date formatted as 'Day_of_week, Month date,year'
+   * @returns {{first: string, second: number}}
+   */
   getDate(){
     let dateObj = new Date();
     let dayOfWeek = this.weekdays[ dateObj.getDay() ];

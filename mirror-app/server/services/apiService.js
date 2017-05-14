@@ -1,10 +1,18 @@
 /**
- * Created by philipbed813 on 5/2/17.
+ * Created by Philip Bedward on 5/2/17.
+ */
+
+/**
+ * Class that contains methods that will be used by any controllers
  */
 class MainService{
 
 
-
+  /**
+   * Format the current time as 'hour:minute:second'
+   * @param dateObj - the javascript date object
+   * @returns {time: string}
+   */
   getFormattedTime( dateObj ){
 
 
@@ -25,5 +33,5 @@ class MainService{
   }
 }
 
-
+// export the class
 module.exports = new MainService();

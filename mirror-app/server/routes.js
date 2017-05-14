@@ -7,8 +7,6 @@ const express = require( 'express' );
 const router = express.Router();
 const mainCtrl = require( './controllers/api' );
 
-// index route
-router.get( "/" , mainCtrl.index );
 
 // time route
 router.get( "/time", mainCtrl.time );

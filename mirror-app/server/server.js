@@ -30,7 +30,6 @@ app.get( "*", ( request, response ) => {
 
 // set port variable to the port that the app is currently running on or set to 3000
 const port = process.env.PORT ? process.env.PORT : '3000';
-
 app.set( 'port', port );
 
 // Create the HTTP Server

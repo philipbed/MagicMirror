@@ -14,13 +14,14 @@ export class TimeComponent implements OnInit {
     }
 
     ngOnInit() {
+        // retrieve the date and time
         let currentTime = this.timeService.getTime();
-        let obs = new Observable();
 
         let currDate = this.timeService.getDate();
 
         this.date = currDate;
 
+        // update the time once every 1000 milliseconds ( every second)
         currentTime.expand(() => Observable.timer(1000).concatMap(() => currentTime))
             .subscribe(time => {
                 this.time = time;

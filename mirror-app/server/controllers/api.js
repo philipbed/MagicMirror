@@ -1,5 +1,5 @@
 /**
- * Created by philipbed813 on 5/1/17.
+ * Created by Philip Bedward on 5/1/17.
  */
 
 let mainService = require('../services/apiService');
@@ -9,22 +9,20 @@ let mainService = require('../services/apiService');
  */
 class MainController{
 
-  index( request, response ){
-
-    response.send( "API from Express works" );
-
-  }
+  /**
+   * Respond to the request with a json object
+   * @param request - the HTTP request object
+   * @param response - the HTTP response object
+   */
 
   time( request, response ){
     let date = new Date();
-    () => {fedfefef;fefef;fefe;}
     const timeObj = mainService.getFormattedTime( date );
-
     response.status( 200 ).json( timeObj );
   }
 }
 
-
+// export the controller
 module.exports = new MainController();
 
 
