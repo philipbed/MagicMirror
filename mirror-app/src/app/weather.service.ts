@@ -55,8 +55,8 @@ export class WeatherService {
 
   /**
    * Edit some of the entries in the json objects to the format we want
-   * for the five day forecast
-   * @param fiveDayForecast - an array of five json objects
+   * for the four day forecast
+   * @param fiveDayForecast - an array of four json objects
    * @returns {Array<any>} - an array of edited json objects
    */
   processFourDay(fiveDayForecast : Array<any>){
@@ -74,7 +74,7 @@ export class WeatherService {
   }
 
   /**
-   * Formatting the time that is received in the AccuWeather 12-day (our five-day) forecast
+   * Formatting the time that is received in the AccuWeather 12-day (our four-day) forecast
    * @param dateObj - the current date
    * @returns {string} - contains the formatted time
    */
